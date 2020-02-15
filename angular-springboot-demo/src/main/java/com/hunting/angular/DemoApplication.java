@@ -2,6 +2,9 @@ package com.hunting.angular;
 
 import java.security.Principal;
 import java.util.*;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -14,11 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class DemoApplication {
+	@RequestMapping("/token")
+	public Map<String, String> token(HttpSession session) {
+		return Collections.singletonMap("token", session.getId());
+	}
+
 	@GetMapping(value = "/{path:[^\\.]*}")
 	public String redirect() {
 		return "forward:/";
 	}
-	
+
 	@GetMapping("/user")
 	public Principal user(Principal user) {
 		return user;
@@ -39,6 +47,5 @@ public class DemoApplication {
 //	public String home() {
 //		return "测试测试";
 //	}
-	
-	
+
 }
