@@ -1,0 +1,9 @@
+spring:
+  security:
+    user:
+      name: edison
+      password: radar
+
+logging:
+  level:
+    org.springframework.security: DEBUG
