@@ -1,5 +1,4 @@
-package com.example.demo11;
-
+package com.hunting.angular;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.example.demo11;
+package com.hunting.angular;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
