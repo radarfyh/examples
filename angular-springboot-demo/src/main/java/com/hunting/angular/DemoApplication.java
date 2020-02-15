@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class DemoApplication {
-	@RequestMapping("/user")
+	@GetMapping(value = "/{path:[^\\.]*}")
+	public String redirect() {
+		return "forward:/";
+	}
+	
+	@GetMapping("/user")
 	public Principal user(Principal user) {
 		return user;
 	}
@@ -23,7 +28,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@RequestMapping("/resource")
+	@GetMapping("/resource")
 	public Map<String, Object> resource() {
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("id", UUID.randomUUID().toString());
@@ -34,4 +39,6 @@ public class DemoApplication {
 //	public String home() {
 //		return "测试测试";
 //	}
+	
+	
 }
