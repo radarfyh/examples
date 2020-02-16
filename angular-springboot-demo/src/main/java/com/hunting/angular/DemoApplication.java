@@ -36,13 +36,13 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@GetMapping("/resource")
-	public Map<String, Object> resource() {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("id", UUID.randomUUID().toString());
-		model.put("content", "宇宙无敌手，出！");
-		return model;
-	}
+//	@GetMapping("/resource")
+//	public Map<String, Object> resource() {
+//		Map<String, Object> model = new HashMap<String, Object>();
+//		model.put("id", UUID.randomUUID().toString());
+//		model.put("content", "宇宙无敌手，出！");
+//		return model;
+//	}
 //	@RequestMapping("/")
 //	public String home() {
 //		return "测试测试";
