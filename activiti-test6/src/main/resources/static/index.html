@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>流程测试首页</title>
+</head>
+<!--<script type="text/javascript" src="js/angular.js"></script>-->
+<script type="text/javascript"
+	src="webjars/angularjs/1.7.2/angular.min.js"></script>
+<script type="text/javascript" src="controller/userController.js"></script>
+<body>
+	<h1>测试activiti</h1>
+	<div ng-app="myApp" >
+	
+	    <div ng-controller="userController" ng-init="queryTasks()">
+	        <h2>待我审核的任务</h2>
+	        <table border="2">
+	            <tr>
+	                <td>id</td>
+	                <td>名称</td>
+	            </tr>
+	            <tr ng-repeat="vacTask in vacTaskList">
+	                <td>{{vacTask.id}}</td>
+	                <td>{{vacTask.name}}</td>
+	            </tr>
+	        </table>
+	        
+	        <h4>{{title}}{{number}}</h4>
+	        
+	    </div>
+	</div>
+</body>
+</html>
